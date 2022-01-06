@@ -26,7 +26,7 @@ def inspection(agent_1_max_vel, agent_2_max_vel):
 if __name__ == '__main__':
 
     # Initializes a rospy node to let the SimpleActionClient publish and subscribe
-    rospy.init_node('assignment_2')
+    rospy.init_node('assignment3')
 
     exec_mode = sys.argv[1] 
     print('exec_mode:' + exec_mode)        
