@@ -25,8 +25,8 @@ def movebase_client(agent_id= 0, x=1.0, y=0.5, w=1.0 ):
     goal.target_pose.header.frame_id = "map"
     goal.target_pose.header.stamp = rospy.Time.now()
    # Move 0.5 meters forward along the x axis of the "map" coordinate frame 
-    goal.target_pose.pose.position.x = 1.0
-    goal.target_pose.pose.position.y = 0.5
+    goal.target_pose.pose.position.x = x
+    goal.target_pose.pose.position.y = y
    # No rotation of the mobile base frame w.r.t. map frame
     goal.target_pose.pose.orientation.w = w
 
@@ -36,8 +36,6 @@ def movebase_client(agent_id= 0, x=1.0, y=0.5, w=1.0 ):
     wait = client.wait_for_result()
 
     #GetPlan - example of functionality
-
-    # sub = rospy.Subscriber("/move_base/GlobalPlanner/plan", Path)
     
     start = PoseStamped()
     start.header.seq = 0
@@ -88,10 +86,10 @@ if __name__ == '__main__':
     try:
        # Initializes a rospy node to let the SimpleActionClient publish and subscribe
         rospy.init_node('movebase_client_py')
-        result = movebase_client(0, 1.5)
+        result = movebase_client(0, x=0.5, y=0.5)
         if result:
             rospy.loginfo("Goal execution done!")
-        result = movebase_client(1, 2.5)
+        result = movebase_client(1, x=0.0, y=-0.75)
         if result:
             rospy.loginfo("Goal execution done!")     
     except rospy.ROSInterruptException:
