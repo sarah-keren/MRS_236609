@@ -40,7 +40,7 @@ if __name__ == '__main__':
     elif exec_mode == 'inspection':
 	agent_id = sys.argv[2]
 	agent_max_vel = sys.argv[3]
-        inspection(agent_max_vel)
+        inspection(agent_id, agent_max_vel)
 	
     else:
         print("Code not found")
