@@ -16,7 +16,7 @@ def vacuum_cleaning(agent_id, agent_max_vel):
     print('cleaning (%d,%d)'%(x,y))
     result = multi_move_base.move(agent_id, x,y)
 
-def inspection(agent_1_max_vel, agent_2_max_vel):
+def inspection(agent_max_vel):
     print('start inspection')
     raise NotImplementedError
 
@@ -37,8 +37,7 @@ if __name__ == '__main__':
         vacuum_cleaning(agent_id, agent_max_vel)
 
     elif exec_mode == 'inspection':
-	agent_1_max_vel = sys.argv[2]
-	agent_2_max_vel = sys.argv[3]
+	agent_max_vel = sys.argv[2]
         inspection(agent_max_vel)
 	
     else:
