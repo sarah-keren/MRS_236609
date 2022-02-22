@@ -3,12 +3,12 @@
   <arg name="model" default="burger"/>
   <arg name="map_file" default="$(find MRS_236609)/maps/closed_room.yaml"/>
 
-  <include file="$(find MRS_236609)/launch/test/multi_0_turtlebot3_navigation.launch">
+  <include file="$(find MRS_236609)/launch/multi_helper/multi_0_turtlebot3_navigation.launch">
 	  <arg name="model" value="$(arg model)" />
 	  <arg name="map_file" default="$(arg map_file)" />
   </include>
 
-  <include file="$(find MRS_236609)/launch/test/multi_1_turtlebot3_navigation.launch">
+  <include file="$(find MRS_236609)/launch/multi_helper/multi_1_turtlebot3_navigation.launch">
 	  <arg name="model" value="$(arg model)" />
 	  <arg name="map_file" default="$(arg map_file)" />
   </include>
